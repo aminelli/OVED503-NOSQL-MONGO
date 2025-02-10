@@ -39,3 +39,14 @@ docker pull mongo
 ```
 
 ### Mongo DB - Standalone
+
+```shell    
+docker network create net-corso-mongo
+# "Subnet": "172.20.0.0/16",
+# "Gateway": "172.20.0.1"
+docker network ls
+
+docker run --name some-mongo -d mongo:tag
+
+
+```
