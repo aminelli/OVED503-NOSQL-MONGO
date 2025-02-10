@@ -48,6 +48,9 @@ docker network ls
 
 # Comando base
 docker run -d --name mongo-standalone -h mongo-standalone -p 27117:27017 --network net-corso-mongo mongo
+docker exec -it mongo-standalone /bin/bash
+docker logs -f mongo-standalone
+
 
 # Comando base con volumi
 docker volume create vol-mongo-db
