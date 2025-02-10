@@ -46,7 +46,28 @@ docker network create net-corso-mongo
 # "Gateway": "172.20.0.1"
 docker network ls
 
-docker run --name some-mongo -d mongo:tag
+# Comando base
+docker run -d --name mongo-standalone -h mongo-standalone -p 27117:27017 --network net-corso-mongo mongo
 
+# Comando base con volumi
+docker volume create vol-mongo-db
+docker volume create vol-mongo-config
+docker run -d --name mongo-standalone -h mongo-standalone -p 27117:27017 --network net-corso-mongo -v vol-mongo-db:/data/db -v vol-mongo-config:/data/configdb mongo
+
+# Comando base con volumi + utenza admin default
+docker run -d --name mongo-standalone -h mongo-standalone -p 27117:27017 --network net-corso-mongo -v vol-mongo-db:/data/db -v vol-mongo-config:/data/configdb -e MONGO_INITDB_ROOT_USERNAME=root -e MONGO_INITDB_ROOT_PASSWORD=Corso2025 mongo
+
+# Di seguito comando in forma leggibile umana
+# docker run 
+#     -d 
+#     --name mongo-standalone 
+#     -h mongo-standalone 
+#     -p 27117:27017 
+#     --network net-corso-mongo 
+#     -v vol-mongo-db:/data/db 
+#     -v vol-mongo-config:/data/configdb 
+#     -e MONGO_INITDB_ROOT_USERNAME=root 
+#     -e MONGO_INITDB_ROOT_PASSWORD=Corso2025 
+#     mongo
 
 ```
