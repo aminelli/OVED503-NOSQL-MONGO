@@ -18,6 +18,8 @@ docker run -d --name mongo-repl-secondary-02 -h mongo-repl-secondary-02 --add-ho
 # initiate classic
 docker exec -it mongo-repl-primary mongosh --eval 'rs.initiate({_id: "avanadeRepSet",members: [{ _id: 0, host : "mongo.cluster.local:28017" },{ _id: 1, host : "mongo.cluster.local:28018" },{ _id: 2, host : "mongo.cluster.local:28019"}]})'
 
+docker exec -it mongo-repl-primary mongosh --eval "rs.initiate({_id: 'avanadeRepSet',members: [{ _id: 0, host : 'mongo.cluster.local:28017' },{ _id: 1, host : 'mongo.cluster.local:28018' },{ _id: 2, host : 'mongo.cluster.local:28019'}]})"
+
 # apt-get install -y wget curl nano htop jq iputils-ping net-tools iproute2 git
 
 
