@@ -1,0 +1,1 @@
+docker exec -it mongo-repl-primary mongosh --eval "rs.initiate({_id: "avanadeRepSet",members: [{ _id: 0, host : \"mongo-repl-primary:27017\" },{ _id: 1, host : \"mongo-repl-secondary-01:27017\" },{ _id: 2, host : \"mongo-repl-secondary-02:27017\" }]})"
