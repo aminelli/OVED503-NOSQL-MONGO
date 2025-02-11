@@ -73,4 +73,14 @@ docker run -d --name mongo-standalone -h mongo-standalone -p 27117:27017 --netwo
 #     -e MONGO_INITDB_ROOT_PASSWORD=Corso2025 
 #     mongo
 
+# CREAZIONE CONTAINER MONGO-EXPRESS
+docker run -d --name mongo-express -h mongo-express --network net-corso-mongo -e ME_CONFIG_BASICAUTH=false -e ME_CONFIG_MONGODB_URL=mongodb://mongo-standalone:27017/ -p 8985:8081 mongo-express
+
+
+
 ```
+
+### JDBC - Mongo DB
+
+jdbc:mongodb://localhost:27117/sales_prova_01
+
