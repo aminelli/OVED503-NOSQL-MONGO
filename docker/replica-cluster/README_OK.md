@@ -41,7 +41,8 @@ mongodb://mongo.cluster.local:28017,mongo.cluster.local:28018,mongo.cluster.loca
 
 
 ```javascript
-rs.initiate({_id: "avanadeRepSet",members: [{ _id: 0, host : "mongo.cluster.local:28017" },{ _id: 1, host : "mongo.cluster.local:28018" },{ _id: 2, host : "mongo.cluster.local:28019"}]})
+
+// Initiate base 
 
 rs.initiate(
    {
@@ -53,6 +54,21 @@ rs.initiate(
       ]
    }
 )
+
+// Initiate with arbitrer and hidden replica node
+
+rs.initiate(
+   {
+      _id: "avanadeRepSet",
+      members: [
+         { _id: 0, host : "mongo.cluster.local:28017", priority: 1, votes: 1 },
+         { _id: 1, host : "mongo.cluster.local:28018", priority: 1, },
+         { _id: 2, host : "mongo.cluster.local:28019", priority: 0, hidden: true},
+         { _id: 3, host : "mongo.cluster.local:28020", arbiterOnly: true}
+      ]
+   }
+)
+
 
 
 ```
