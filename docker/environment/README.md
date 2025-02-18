@@ -40,3 +40,27 @@ docker run
 
 
 ```
+
+
+```javascript
+// conversione dell'estensioen file nel processor updateattribute
+${filename:replace('.csv','.json')}
+
+// JoltTransformJson rules:
+[
+	{
+		"operation": "shift",
+		"spec": {
+			"*": "&"
+		}
+	},
+	{
+			"operation": "default",
+			"spec": {
+				"filename": "${filename}",
+				"import_time": "${now():format('yyyy-MM-dd HH:mm:ss)}"
+			}
+	}
+]
+
+```
