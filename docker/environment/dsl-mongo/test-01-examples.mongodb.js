@@ -1,0 +1,4 @@
+
+use('imports')
+
+db.getCollectionNames();

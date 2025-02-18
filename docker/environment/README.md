@@ -58,7 +58,9 @@ ${filename:replace('.csv','.json')}
 			"operation": "default",
 			"spec": {
 				"filename": "${filename}",
-				"import_time": "${now():format('yyyy-MM-dd HH:mm:ss)}"
+				"import_type": "csv",
+				"import_time": "${now():format('yyyy-MM-dd HH:mm:ss')}",
+				"recordId": "${uuid}"				
 			}
 	}
 ]

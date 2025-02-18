@@ -1,0 +1,18 @@
+{
+    "_id": {
+        "$oid": "67b45fe1094b2256dcea391e"
+    },
+    "officeCode": "1",
+    "city": "San Francisco",
+    "phone": "+1 650 219 4782",
+    "addressLine1": "100 Market Street",
+    "addressLine2": "Suite 300",
+    "state": "CA",
+    "country": "USA",
+    "postalCode": "94080",
+    "territory": "NA",
+    "filename": "offices.csv",
+    "import_type": "csv",
+    "import_time": "2025-02-18 10:24:33",
+    "recordId": "6ab2e494-403d-46b5-b7a9-9549d06cbc72"
+}
